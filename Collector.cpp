@@ -26,7 +26,7 @@ void Collector::print() {
     }
 }
 
-void* Collector::NewNode() { // RETORNA PUNTERO PARA RECICLAR
+void* Collector::NewNode() {
     if(this->first!= nullptr){
         Node* aux = this->first;
         this->set_first(first->get_Next());
@@ -36,7 +36,7 @@ void* Collector::NewNode() { // RETORNA PUNTERO PARA RECICLAR
         return nullptr;
     }
 }
-void Collector::SaveNode(Node* node) { //RECIBE PUNTERO PARA ALMACENAR EN LISTA
+void Collector::SaveNode(Node* node) {
     node->set_Next(this->get_first());
     this->set_first(node);
 }

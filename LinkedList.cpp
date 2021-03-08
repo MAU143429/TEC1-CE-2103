@@ -16,7 +16,7 @@ LinkedList::~LinkedList(){
 
 }
 
-void LinkedList::insert_node(int temp) {
+void LinkedList::append(int temp) {
     size_t size = 2;
     Node *n_node = new Node();
     n_node->set_Data(temp);

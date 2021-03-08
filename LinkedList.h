@@ -10,7 +10,7 @@ class LinkedList {
 public:
     LinkedList();
     ~LinkedList();
-    void insert_node(int data);
+    void append(int data);
     void delete_node();
     void print();
 

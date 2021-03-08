@@ -16,8 +16,8 @@ private:
 
 public:
     ~ Collector();
-    void* NewNode (); // RETORNA PUNTERO PARA RECICLAR
-    void SaveNode (Node* node); //RECIBE PUNTERO PARA ALMACENAR EN LISTA
+    void* NewNode ();
+    void SaveNode (Node* node);
     void set_first(Node *node);
     Node* get_first();
     void print();
