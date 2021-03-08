@@ -13,10 +13,10 @@ public:
     void* operator new (size_t size);
     void operator delete(void *pointer_memory);
     Node();
-    void set_Siguiente(Node *a);
-    void set_Dato(int dato);
-    Node* get_Siguiente ();
-    int get_Dato ();
+    void set_Next(Node *temp);
+    void set_Data(int data);
+    Node* get_Next ();
+    int get_Data ();
 
 private:
     Node *next;

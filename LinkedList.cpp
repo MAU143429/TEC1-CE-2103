@@ -15,59 +15,51 @@ LinkedList::LinkedList() {
 LinkedList::~LinkedList(){
 
 }
-/**
- * Inserta en la lista un nodo que almacena un integer dado
- * @param a valor entero que se desea que almacene el nuevo nodo que se inserta
- */
-void LinkedList::insert_inicio(int a) {
+
+void LinkedList::insert_node(int temp) {
     size_t size = 2;
-    Node *nuevo_nodo = new Node();
-    nuevo_nodo->set_Dato(a);
+    Node *n_node = new Node();
+    n_node->set_Data(temp);
     if (first == nullptr){
-        first = nuevo_nodo;
+        first = n_node;
     } else {
-        nuevo_nodo->set_Siguiente(first);
-        first = nuevo_nodo;
+        n_node->set_Next(first);
+        first = n_node;
     }
-    this->visualizar();
+    this->print();
 }
-/**
- * Permite visualizar el contenido de la lista
- */
-void LinkedList::visualizar() {
+
+void LinkedList::print() {
     Node *aux = first;
     if (this->first == nullptr){
-        cout << "\n------------------\nLa lista esta vacia\n------------------" << endl;
+        cout << "\nThe list is empty" << endl;
     }else{
-        cout << "\nLa lista corresponde a:\n------------------" << endl;
-        while(aux!= nullptr) {
-            cout << aux->get_Dato() <<": " <<static_cast<void*>(aux)<< "\n";
-            aux = aux->get_Siguiente();
+        cout << "\n[";
+        while(aux != nullptr) {
+            cout << aux->get_Data() <<",";
+            aux = aux->get_Next();
         }
-        cout << "------------------";
+        cout << "]\n";
     }
 }
 
-/**
- * Elimina el ultimo elemento de la lista
- */
-void LinkedList::eliminar_nodofinal() {
+void LinkedList::delete_node() {
 
     Node *aux = this->first;
 
     if (aux == nullptr) {
-        cout << "No hay elementos en la lista" << endl;
+        cout << "The list is empty" << endl;
     } else {
-        if (aux->get_Siguiente() == nullptr) {
+        if (aux->get_Next() == nullptr) {
             delete this->first;
             this->first = nullptr;
         } else {
-            while (aux->get_Siguiente()->get_Siguiente() != nullptr) {
-                aux = aux->get_Siguiente();
+            while (aux->get_Next()->get_Next() != nullptr) {
+                aux = aux->get_Next();
             }
-            delete aux->get_Siguiente();
-            aux->set_Siguiente(nullptr);
+            delete aux->get_Next();
+            aux->set_Next(nullptr);
         }
     }
-    this->visualizar();
+    this->print();
 }

@@ -16,12 +16,11 @@ private:
 
 public:
     ~ Collector();
-    void Limpiar (); //
-    void* NuevoNodo (); // RETORNA PUNTERO PARA RECICLAR
-    void ReciclarNodo (Node* nodo); //RECIBE PUNTERO PARA ALMACENAR EN LISTA
-    void set_first(Node *nodo);
+    void* NewNode (); // RETORNA PUNTERO PARA RECICLAR
+    void SaveNode (Node* node); //RECIBE PUNTERO PARA ALMACENAR EN LISTA
+    void set_first(Node *node);
     Node* get_first();
-    void visualizar();
+    void print();
     static Collector *getInstance(){
         if(unique_instance == NULL){
             unique_instance = new Collector();

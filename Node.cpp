@@ -10,47 +10,39 @@ using namespace std;
 
 Node::Node() {
 }
-/**
- * Operador new sobrecargado que permite administrar la memoria mediante los procesos de reciclaje de punteros del Collector
- * @param size tamano del espacio que se reservara en memoria
- * @return puntero a la direccion de memoria donde se colocara nuevo nodo
- */
 void* Node::operator new(size_t size) {
-    void* espacioMemoria;
-    Collector::getInstance()->visualizar();
-    espacioMemoria = Collector::getInstance()->NuevoNodo();
+    void* newMemory;
+    Collector::getInstance()->print();
+    newMemory = Collector::getInstance()->NewNode();
 
-    if (espacioMemoria == nullptr){
-        Node * p = ::new Node();
-        cout<< "\nNodo creado con nueva direccion: " << static_cast<void*>(p) << endl;
-        return p;
+    if (newMemory == nullptr){
+        Node * temp2 = ::new Node();
+        cout<< "\nNew Node in: " << static_cast<void*>(temp2) << endl;
+        return temp2;
     } else {
 
-        cout<< "\nNodo creado reutilizando direccion: " << static_cast<void*>(espacioMemoria) << endl;
-        return espacioMemoria;
+        cout<< "\nNew node reusable in: " << static_cast<void*>(newMemory) << endl;
+        return newMemory;
     }
 }
-/**
- * Elimina nodo de la lista y envia el puntero al Collector para su reciclaje
- * @param p puntero por reciclar
- */
-void Node::operator delete(void * p)
+
+void Node::operator delete(void * temp2)
 {
-    Collector::getInstance()->ReciclarNodo((Node*) p);
-    cout<< "\nNodo " << static_cast<void*>(p) << " eliminado de lista y agregado a Collector\n" << endl;
+    Collector::getInstance()->SaveNode((Node*) temp2);
+    cout<< "\nNode deleted\n" << endl;
 }
 
-void Node::set_Siguiente(Node *a) {
-    this->next = a;
+void Node::set_Next(Node *temp) {
+    this->next = temp;
 }
 
-void Node::set_Dato(int dato) {
-    this->data = dato;
+void Node::set_Data(int data) {
+    this->data = data;
 }
 
-Node* Node::get_Siguiente() {
+Node* Node::get_Next(){
     return this->next;
 }
-int Node::get_Dato() {
+int Node::get_Data() {
     return this->data;
 }

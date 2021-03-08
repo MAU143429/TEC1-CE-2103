@@ -10,9 +10,9 @@ class LinkedList {
 public:
     LinkedList();
     ~LinkedList();
-    void insert_inicio(int dato);
-    void eliminar_nodofinal();
-    void visualizar();
+    void insert_node(int data);
+    void delete_node();
+    void print();
 
 private:
     Node* first;
