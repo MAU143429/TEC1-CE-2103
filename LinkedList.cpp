@@ -16,6 +16,11 @@ LinkedList::~LinkedList(){
 
 }
 
+/**>
+ * @brief this method allow to create and append a new element in the main list
+ * @param temp is the value of the new element
+ * @author Mauricio Calderon Chavarria
+ */
 void LinkedList::append(int temp) {
     size_t size = 2;
     Node *n_node = new Node();
@@ -28,25 +33,38 @@ void LinkedList::append(int temp) {
     }
     this->print();
 }
-
+/**>
+ * @brief this method allow to show a list in the console
+ * @author Mauricio Calderon Chavarria
+ */
 void LinkedList::print() {
     Node *aux = first;
     if (this->first == nullptr){
-        cout << "\nThe list is empty" << endl;
+        cout << "\nThe list is empty\n" << endl;
+        cout << "[ ]\n" << endl;
     }else{
         cout << "\n[";
+
         while(aux != nullptr) {
-            cout << aux->get_Data() <<",";
-            aux = aux->get_Next();
+            if(aux->get_Next() == nullptr){
+                cout << aux->get_Data();
+                aux = aux->get_Next();
+            }else{
+                cout << aux->get_Data() <<",";
+                aux = aux->get_Next();
+            }
+
         }
         cout << "]\n";
     }
 }
-
+/**>
+ * @brief the method delete one node for the main list, before the delete it, other method save the memory address of the node
+ * @author Mauricio Calderon Chavarria
+ */
 void LinkedList::delete_node() {
 
     Node *aux = this->first;
-
     if (aux == nullptr) {
         cout << "The list is empty" << endl;
     } else {
