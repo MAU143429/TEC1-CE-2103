@@ -1,4 +1,4 @@
-# 📚 Tarea 1 — Algoritmos y Estructuras de Datos II CE-2103
+# 📚 TEC1 — Algoritmos y Estructuras de Datos II CE-2103
 
 ## 📘 Overview
 
