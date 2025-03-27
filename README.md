@@ -1,13 +1,25 @@
-# Tarea-1-EC-Datos-II
-Repositorio para la Tarea ExtraClase 1 de Algoritmos y Estructuras de Datos II
+# 📚 Tarea 1 — Algoritmos y Estructuras de Datos II CE-2103
 
-### Estudiante: Mauricio Calderon Chavarria
+## 📘 Overview
 
-### Profesor: Antonio Gonzales Torres
+This repository contains the implementation and documentation for TEC1 of the course CE-2103 — Algoritmos y Estructuras de Datos II at Instituto Tecnológico de Costa Rica.
 
-## IMPORTANTE:
-1. Para acceder al archivo .html Doxygen debe ingresar al index.html que se encuentra en la carpeta HTML, para esto debe descargar el repositorio y descomprimirlo.
-2. Para acceder a la prueba y explicacion del codigo acceder a la wiki desde el siguiente enlance
---->https://github.com/MAU143429/Tarea-1-EC-Datos-II/wiki 
+The objective of this assignment was to implement and explain a structured solution using core data structures, alongside its detailed documentation with Doxygen and GitHub Wiki.
 
+---
+
+## 🧠 Key Components
+
+- 📦 Implementation in C++ using object-oriented design
+- 🧪 Unit tests and usage example included in the code
+- 📄 HTML documentation generated using **Doxygen**
+- 📖 Additional explanation provided through the repository **Wiki**
+
+---
+
+## 🛠️ Technologies
+
+- **Language**: C++
+- **Documentation**: Doxygen (HTML format)
+- **IDE Recommended**: CLion / Visual Studio Code / Qt Creator
 
